@@ -1,4 +1,8 @@
-# jdkhome blzo -- 服务端混合管理后台
+# jdkhome blzo -- 拿来即用的管理后台
 
-> 基础项目,提供类似业务模板化开发
+> 描述待补充。。。。
+
+## 不要随便删管理员或者权限，谢谢~~~~~~
+
+# 关联项目: https://github.com/xhuabu/easy-auth
 
