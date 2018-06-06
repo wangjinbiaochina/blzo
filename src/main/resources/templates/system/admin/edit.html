@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head"></head>
+
+<body>
+<!-- topbar starts -->
+<div th:replace="common/topbar"></div>
+<!-- topbar ends -->
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div th:replace="common/menu"></div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-6">
+                    <div th:replace="common/box_header"></div>
+
+                    <div class="content-box-large box-with-header">
+                        <div class="panel-body">
+                            <fieldset>
+                                <input type="hidden" id="adminId" th:value="${obj.id}">
+                                <div class="form-group">
+                                    <label>登录名</label>
+                                    <input type="text" class="form-control" id="username" th:value="${obj.username}" placeholder="请输入">
+                                </div>
+                                <div class="form-group">
+                                    <label>密码</label>
+                                    <input type="text" class="form-control" id="password" placeholder="请输入">
+                                </div>
+                                <div class="form-group">
+                                    <label>昵称</label>
+                                    <input type="text" class="form-control" id="nickName" th:value="${obj.nickName}" placeholder="请输入">
+                                </div>
+                                <div class="form-group">
+                                    <label>手机号</label>
+                                    <input type="text" class="form-control" id="phone" th:value="${obj.phone}" placeholder="请输入">
+                                </div>
+                                <div class="form-group">
+                                    <label>备注</label>
+                                    <input type="text" class="form-control" id="remark" th:value="${obj.remark}" placeholder="请输入">
+                                </div>
+                                <div class="form-group">
+                                    <label>状态</label>
+                                    <select id="status" class="form-control">
+                                        <option value="0" th:selected="${obj.status == 0}">初始状态</option>
+                                        <option value="1" th:selected="${obj.status == 1}">正常使用</option>
+                                        <option value="-1" th:selected="${obj.status == -1}">冻结</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                            <div>
+                                <div class="btn btn-primary" id="save">
+                                    <i class="fa fa-save"></i>
+                                    保存
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="common/footer"></footer>
+
+<!-- external javascript -->
+<div th:replace="common/script"></div>
+
+<script type="text/javascript" src="/js/page/system/admin/edit.js"></script>
+<script>
+    window.onload = function () {
+
+        var adminEdit = new window.controller.AdminEdit();
+
+        adminEdit.init();
+    };
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<div class="sidebar content-box" style="display: block;" th:fragment="menu" xmlns:th="http://www.thymeleaf.org">
+    <ul class="nav">
+        <!-- Main menu -->
+        <li class="current"><a href="/index"><i class="glyphicon glyphicon-home"></i> 主页</a></li>
+        <li class="submenu" th:each="menuVO:${groupMenus}">
+            <a href="#">
+                <i class="glyphicon glyphicon-list"></i>
+                <span th:text="${menuVO.groupName}">组名</span>
+                <span class="caret pull-right"></span>
+            </a>
+            <!-- Sub menu -->
+            <ul>
+                <li th:each="authjBean:${menuVO.authjBeans}">
+                    <a th:href="${authjBean.uri}" th:text="${authjBean.name}">管理员列表</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

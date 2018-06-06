@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head"></head>
+
+<body>
+<!-- topbar starts -->
+<div th:replace="common/topbar"></div>
+<!-- topbar ends -->
+
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-2">
+            <div th:replace="common/menu"></div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-12">
+                    <div th:replace="common/box_header"></div>
+
+                    <div class="content-box-large box-with-header">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <legend>筛选条件<a class="empty"><i class="glyphicon glyphicon-repeat"></i></a></legend>
+
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">基本输入框</label>
+                                    <input class="form-control" placeholder="请输入" type="text">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="control-label">自动下拉框</label>
+                                    <input class="form-control" placeholder="请输入" type="text" list="list">
+                                    <datalist id="list">
+                                        <option value="Alexandra"></option>
+                                        <option value="Alice"></option>
+                                    </datalist>
+
+                            </div>
+                            <div class="col-md-12">
+                                <button class="btn btn-default search"><i class="glyphicon glyphicon-search"></i>搜索
+                                </button>
+                            </div>
+                            <div class="panel-heading  col-md-12">
+                                <legend>内容<a href="#"><i class="glyphicon glyphicon-plus"></i></a></legend>
+                            </div>
+                            <div class="panel-heading  col-md-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>表头1</th>
+                                        <th>表头2</th>
+                                        <th>表头3</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row" th:include="common/paginate :: paginate"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer th:replace="common/footer"></footer>
+
+<!-- external javascript -->
+<div th:replace="common/script"></div>
+</body>
+</html>
